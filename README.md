@@ -8,5 +8,5 @@ Lista de Exercícios 01 - Introdução à linguagem Java - Exercícios de Fixaç
 
 - Versão da linguagem: Java 17
 
-- 
+
      
