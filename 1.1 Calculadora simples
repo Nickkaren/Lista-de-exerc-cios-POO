@@ -1,1 +1,85 @@
+Classe Calculadora
 
+public class Calculadora {
+
+    public double soma(double x, double y){
+        return x+y;
+    }
+
+    public double subtracao(double x, double y){
+        return x-y;
+    }
+
+    public double multiplicacao(double x, double y){
+        return x*y;
+    }
+
+    public double divisao(double x, double y){
+        if(y != 0){
+            return x/y;
+        }
+        else {
+            System.out.print("Não é possível realizar uma divisão por 0!");
+            return -1;
+        }
+    }
+}
+
+Classe Main
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        Calculadora calc = new Calculadora();
+
+        System.out.print("Digite o primeiro número: ");
+        double n1 = sc.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        double n2 = sc.nextDouble();
+
+        System.out.println("Opções: ");
+        System.out.println("1 - SOMA ");
+        System.out.println("2 - SUBTRAÇÃO ");
+        System.out.println("3 - MULTIPLICAÇÃO ");
+        System.out.println("4 - DIVISÃO ");
+
+        int opcao = sc.nextInt();
+        double resultado;
+
+        switch (opcao){
+            case 1:
+                resultado = calc.soma(n1, n2);
+                System.out.println("Resultado = " +resultado);
+                break;
+
+            case 2:
+                resultado = calc.subtracao(n1, n2);
+                System.out.println("Resultado = "+resultado);
+                break;
+
+            case 3:
+                resultado = calc.multiplicacao(n1, n2);
+                System.out.println("Resultado = "+resultado);
+                break;
+
+            case 4:
+                resultado = calc.divisao(n1, n2);
+                if (resultado != -1){
+                    System.out.println("Resultado = " + resultado);
+                    break;
+                }
+                else {
+                    break;
+                }
+
+            default:
+                System.out.println("Opção Inválida!");
+        }
+        sc.close();
+    }
+
+}
