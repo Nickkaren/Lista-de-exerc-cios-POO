@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        Palindromo verify = new Palindromo();
+
+        System.out.print("Digite uma palavra ou frase para verificar se é um palíndromo: ");
+        String entrada = sc.nextLine();
+
+        if (verify.Palindromo(entrada)) {
+            System.out.println("É um palíndromo!");
+        } else {
+            System.out.println("Não é um palíndromo.");
+        }
+        sc.close();
+    }
+}
+
+public class Palindromo {
+
+        public boolean Palindromo(String texto) {
+
+            String textoFormatado = texto.replaceAll("\\s+", "").toLowerCase();
+
+            StringBuilder reverso = new StringBuilder(textoFormatado).reverse();
+            return textoFormatado.equals(reverso.toString());
+        }
+    }
+
+}
